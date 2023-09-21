@@ -1,6 +1,8 @@
 package histoire;
 
-import java.util.Iterator;
+import personnages.Gaulois;
+import personnages.Romain;
+
 
 public class Scenario {
 
@@ -13,5 +15,4 @@ public class Scenario {
 		asterix.frapper(minus);
 		asterix.frapper(minus);
 	}
-
 }
