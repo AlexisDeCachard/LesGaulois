@@ -29,7 +29,7 @@ public class Gaulois {
 		return "Le gaulois " + nom + " : ";
 	}
 	
-	public void frapper(Romain romain, Druide druide) {
+	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
 		romain.recevoirCoup((force/3) * effetPotion);
 	}
@@ -46,12 +46,12 @@ public class Gaulois {
 		System.out.println(asterix.toString());
 		System.out.println(asterix.prendreParole());
 		asterix.parler("Bonjour !");
-		Romain minus=new Romain("Minus",3);
+		Romain minus=new Romain("Minus",6);
 		Druide pano = new Druide("Panoramix", 5, 10);
 		pano.preparerPotion();
 		asterix.boirePotion(pano.getForcePotion());
-		asterix.frapper(minus,pano);
-		asterix.frapper(minus,pano);
+		asterix.frapper(minus);
+		asterix.frapper(minus);
 	}
 
 	

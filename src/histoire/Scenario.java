@@ -20,7 +20,7 @@ public class Scenario {
 		asterix.parler("Bonjour.");
 		minus.parler("UN GAU...UN GAUGAU...");
 		for (int i = 0; i < 3; i++) {
-			asterix.frapper(minus,pano);
+			asterix.frapper(minus);
 		}
 	}
 }
