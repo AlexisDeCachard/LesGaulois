@@ -48,7 +48,7 @@ public class Romain {
 				entrerDansEquipements(equip,nomEquip);
 				break;
 			case 1:
-				if (nomEquip == equipements[0].getNom()) {
+				if (nomEquip.equals(equipements[0].getNom())) {
 					System.out.println("Le soldat " + nom + " possède déjà un " + nomEquip + "!");
 				}
 				else {
