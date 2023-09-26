@@ -1,8 +1,5 @@
 package personnages;
 
-import java.lang.reflect.Method;
-import java.security.PublicKey;
-
 public class Gaulois {
 	private String nom;
 	private int force;
@@ -34,11 +31,12 @@ public class Gaulois {
 	
 	public void frapper(Romain romain, Druide druide) {
 		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
-		romain.recevoirCoup((force/3)* druide.getForcePotion());
+		romain.recevoirCoup((force/3) * effetPotion);
 	}
 	
 	public void boirePotion(int forcePotion) {
-		parler("Merci Druide, je sens que ma force est "+ forcePotion + " fois dÃ©cuplÃ©e.");
+		effetPotion = forcePotion;
+		parler("Merci Druide, je sens que ma force est "+ effetPotion + " fois décuplée.");
 	}
 		
 	
