@@ -46,12 +46,7 @@ public class Romain {
 		assert force > 0;
 		int oldForce = force;
 		forceCoup = calculResistanceEquipement(forceCoup);
-		if (forceCoup>=0){
-			force -= forceCoup;
-		}
-		else {
-			force --;
-		}
+		force -= forceCoup;
 		// if (force > 0) {
 		// parler("Aïe");
 		// } else {
@@ -98,6 +93,9 @@ public class Romain {
 		}
 		parler(texte);
 		forceCoup -= resistanceEquipement;
+		if (forceCoup <0) {
+			forceCoup=0;
+		}
 		return forceCoup;
 	}
 
