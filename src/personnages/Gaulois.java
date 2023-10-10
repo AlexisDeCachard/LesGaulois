@@ -36,7 +36,7 @@ public class Gaulois {
 //	}
 	
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
+		System.out.println(nom + " envoie un grand coup dans la mï¿½choire de " + romain.getNom());
 		Equipement[] tropheescombat = romain.recevoirCoup((force / 3) * effetPotion);
 		for (int i = 0; tropheescombat != null && i < tropheescombat.length; i++, nbTrophees++) {
 			this.trophees[nbTrophees] = tropheescombat[i];
@@ -46,8 +46,20 @@ public class Gaulois {
 	
 	public void boirePotion(int forcePotion) {
 		effetPotion = forcePotion;
-		parler("Merci Druide, je sens que ma force est "+ effetPotion + " fois décuplée.");
+		parler("Merci Druide, je sens que ma force est "+ effetPotion + " fois dï¿½cuplï¿½e.");
 	}
+	
+	public void faireUneDonation(Musee musee) {
+		Gaulois gaulois=new Gaulois(this.nom,this.force);
+		parler("Je donne au musee tous mes trophees:");
+		while (nbTrophees!=0) {
+				musee.donnerTrophees(gaulois, trophees[nbTrophees-1]);;
+				System.out.println("- " + trophees[nbTrophees-1]);
+				trophees[nbTrophees-1]=null;
+				nbTrophees --;
+		}
+	}
+	
 		
 	
 	public static void main(String[] args) {
@@ -56,12 +68,16 @@ public class Gaulois {
 		System.out.println(asterix.toString());
 		System.out.println(asterix.prendreParole());
 		asterix.parler("Bonjour !");
-		Romain minus=new Romain("Minus",6);
+		Romain minus=new Romain("Minus",1);
 		Druide pano = new Druide("Panoramix", 5, 10);
 		pano.preparerPotion();
 		asterix.boirePotion(pano.getForcePotion());
+		Musee musee=new Musee();
+		asterix.faireUneDonation(musee);
+		minus.sEquiper(Equipement.BOUCLIER);
 		asterix.frapper(minus);
-		asterix.frapper(minus);
+		asterix.faireUneDonation(musee);
+		System.out.println(musee.extraireInstructionsOcaml());
 	}
 
 	
