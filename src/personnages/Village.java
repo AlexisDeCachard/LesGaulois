@@ -47,7 +47,6 @@ public class Village {
 //		at personnages.Village.main(Village.java:35)
 //		Le tableau va de l'indice 0 à l'indice 29, donc il ne peut pas y avoir de valeur à l'indice 30 dans ce tableau.
 		Chef abra = new Chef("Abraracourcix",6,irreduc);
-		irreduc.setChef(abra);
 		Gaulois asterix=new Gaulois("Asterix",8);
 		irreduc.ajouterHabitant(asterix);
 //		Gaulois gaulois = irreduc.trouverHabitant(1);
