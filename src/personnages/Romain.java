@@ -5,7 +5,7 @@ public class Romain {
 	private int force;
 	private Equipement[] equipements=new Equipement[2];
 	private int nbEquipement = 0;
-	private boolean perdant = true;
+	private boolean victoire = true;
 	
 	public Romain(String nom, int force) {
 		assert force > 0;
@@ -22,11 +22,11 @@ public class Romain {
 	}
 	
 	public boolean getPerdant() {
-		return perdant;
+		return victoire;
 	}
 
 	public void setPerdant(boolean perdant) {
-		this.perdant = perdant;
+		this.victoire = perdant;
 	}
 
 	public void parler(String texte) {
@@ -53,7 +53,6 @@ public class Romain {
 		Equipement[] equipementEjecte = null;
 		// pr�condition
 		assert force > 0;
-		int oldForce = force;
 		forceCoup = calculResistanceEquipement(forceCoup);
 		force -= forceCoup;
 		// if (force > 0) {
@@ -103,7 +102,7 @@ public class Romain {
 		forceCoup -= resistanceEquipement;
 		if (forceCoup <= 0) {
 			forceCoup=0;
-			setPerdant(true);
+			setPerdant(false);
 			parler("Ah ah je suis trop fort !");
 		}
 		return forceCoup;

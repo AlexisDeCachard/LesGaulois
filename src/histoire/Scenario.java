@@ -25,13 +25,12 @@ public class Scenario {
 		minus.parler("UN GAU... UN GAUGAU...");
 		do {
 			asterix.frapper(minus);
-		} while (minus.getForce() > 0 || minus.getPerdant());
+		} while (minus.getForce() > 0 && minus.getPerdant());
 		milexcus.parler("UN GAU... UN GAUGAU...");
 		do {
 			asterix.frapper(milexcus);
-		} while (milexcus.getForce() > 0);
+		} while (milexcus.getForce() > 0 && milexcus.getPerdant());
 		
-//		Partie a decommenter
 		
 //		Musee musee = new Musee();
 //		asterix.faireUneDonnation(musee);
